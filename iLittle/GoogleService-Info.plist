@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>861769031436-tsovg21q5kgpchv13dhff4no87bmjcv3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.861769031436-tsovg21q5kgpchv13dhff4no87bmjcv3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCPI56Sa1eSRD-UEuH0u3bknMi0G2Ma90</string>
+	<key>GCM_SENDER_ID</key>
+	<string>861769031436</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ronylevari.iLittle</string>
+	<key>PROJECT_ID</key>
+	<string>ilittle-ac6b5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ilittle-ac6b5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:861769031436:ios:d0ecc39dd2aa277a</string>
+	<key>DATABASE_URL</key>
+	<string>https://ilittle-ac6b5.firebaseio.com</string>
+</dict>
+</plist>
