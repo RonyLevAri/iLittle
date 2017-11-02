@@ -11,7 +11,29 @@ import UserNotifications
 
 class InitialLoginViewController: UIViewController {
     
+    //MARK: attributes
+    var username: String?
+    @IBOutlet weak var usernameTextField: UITextField!
+    
     //MARK: actions
+    @IBAction func GoToConfiguration(_ sender: UIButton) {
+        print("user name: \(usernameTextField.text!)")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        usernameTextField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        usernameTextField.resignFirstResponder()
+        saveUserNameToFile()
+    }
+    
+    //MARK: custom functions
+    func saveUserNameToFile() {
+        
+    }
     
     func scheduleNotification() {
         let content = UNMutableNotificationContent()
@@ -50,10 +72,13 @@ class InitialLoginViewController: UIViewController {
             }
         })
     }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+extension InitialLoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

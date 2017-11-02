@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZJE-bQ-QYD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MalayalamSangamMN.ttc">
+            <string>MalayalamSangamMN</string>
+        </array>
+        <array key="MyanmarSangamMN.ttc">
+            <string>MyanmarSangamMN</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Initial Login View Controller-->
+        <scene sceneID="hni-OE-WOm">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="ZJE-bQ-QYD" customClass="InitialLoginViewController" customModule="iLittle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ft-25-Kb0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tP5-yo-KGs">
+                                <rect key="frame" x="45" y="340" width="285" height="40"/>
+                                <color key="textColor" red="0.46274509803921571" green="0.46666666666666667" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderIBColor">
+                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-E7-fPs">
+                                <rect key="frame" x="45.5" y="119" width="285" height="186.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" image="logo190X110" translatesAutoresizingMaskIntoConstraints="NO" id="zKT-Eq-krR">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="120"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In The Little" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-MK-bQ7">
+                                        <rect key="frame" x="0.0" y="120" width="285" height="66.5"/>
+                                        <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="56"/>
+                                        <color key="textColor" red="0.46274509803921571" green="0.46666666666666667" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-7d-vvV">
+                                <rect key="frame" x="45" y="399.5" width="285" height="53"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.46274509803921571" green="0.46666666666666667" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderIBColor">
+                                        <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="GoToConfiguration:" destination="ZJE-bQ-QYD" eventType="touchUpInside" id="Syq-3Y-oeJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iJO-7d-vvV" firstAttribute="leading" secondItem="c4j-3H-kY8" secondAttribute="leading" constant="45" id="Ddx-I3-hof"/>
+                            <constraint firstItem="LaY-E7-fPs" firstAttribute="centerY" secondItem="c4j-3H-kY8" secondAttribute="centerY" multiplier="0.7" constant="-28.349999999999994" id="EYI-W3-beZ"/>
+                            <constraint firstItem="c4j-3H-kY8" firstAttribute="trailing" secondItem="tP5-yo-KGs" secondAttribute="trailing" constant="45" id="O4G-JV-PqU"/>
+                            <constraint firstItem="iJO-7d-vvV" firstAttribute="top" secondItem="tP5-yo-KGs" secondAttribute="bottom" constant="20" id="PdP-B4-Ene"/>
+                            <constraint firstItem="tP5-yo-KGs" firstAttribute="leading" secondItem="c4j-3H-kY8" secondAttribute="leading" constant="45" id="PiX-qN-8jJ"/>
+                            <constraint firstItem="c4j-3H-kY8" firstAttribute="trailing" secondItem="iJO-7d-vvV" secondAttribute="trailing" constant="45" id="hf0-qh-dcB"/>
+                            <constraint firstItem="tP5-yo-KGs" firstAttribute="top" secondItem="5EO-MK-bQ7" secondAttribute="bottom" constant="34" id="nLg-9v-aqr"/>
+                            <constraint firstItem="LaY-E7-fPs" firstAttribute="centerX" secondItem="c4j-3H-kY8" secondAttribute="centerX" id="vPU-AE-plQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c4j-3H-kY8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="89R-LY-6Ds"/>
+                    <connections>
+                        <outlet property="usernameTextField" destination="tP5-yo-KGs" id="Xfi-cc-R9F"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1io-o4-94Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1072.8" y="-44.527736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo190X110" width="189" height="120"/>
+    </resources>
 </document>
