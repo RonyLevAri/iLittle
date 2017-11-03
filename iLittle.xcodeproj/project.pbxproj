@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51474B581FAA9AC60088BC55 /* LoginFlowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
 		51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */; };
+		51474B5E1FACD0FD0088BC55 /* ConfigurationCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5D1FACD0FD0088BC55 /* ConfigurationCollectionLayout.swift */; };
 		5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150263E1FA8F7530056FEB7 /* AppDelegate.swift */; };
 		515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */; };
 		515026441FA8F7530056FEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515026421FA8F7530056FEB7 /* Main.storyboard */; };
@@ -20,6 +20,9 @@
 		515026621FA8F7530056FEB7 /* iLittleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515026611FA8F7530056FEB7 /* iLittleUITests.swift */; };
 		515026701FA8F8100056FEB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5150266F1FA8F80F0056FEB7 /* GoogleService-Info.plist */; };
 		515026721FA913AA0056FEB7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 515026711FA913A90056FEB7 /* .gitignore */; };
+		51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */; };
+		51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */; };
+		51990DD51FAD01C500DE7A79 /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */; };
 		79AC724C2799CF0AF83F2CD4 /* Pods_iLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */; };
 		9960213033ED4A75B12C6634 /* Pods_iLittleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92D8B68DDB1840DA82A80A0 /* Pods_iLittleUITests.framework */; };
 		BB40EF2AD959D2EA7A205419 /* Pods_iLittleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */; };
@@ -46,9 +49,9 @@
 		21B9B533F1D0A9091EA186F0 /* Pods-iLittleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6A531D7FEF5725F3377C35 /* Pods-iLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittle/Pods-iLittle.release.xcconfig"; sourceTree = "<group>"; };
-		51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowNavigationController.swift; sourceTree = "<group>"; };
 		51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileDataAccessObject.swift; sourceTree = "<group>"; };
 		51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		51474B5D1FACD0FD0088BC55 /* ConfigurationCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCollectionLayout.swift; sourceTree = "<group>"; };
 		5150263B1FA8F7530056FEB7 /* iLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5150263E1FA8F7530056FEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,9 @@
 		515026631FA8F7530056FEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5150266F1FA8F80F0056FEB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		515026711FA913A90056FEB7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCollectionViewCell.swift; sourceTree = "<group>"; };
+		51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationCollectionViewCell.xib; sourceTree = "<group>"; };
+		51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		5A6297D159C159936A3DC384 /* Pods-iLittleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleUITests/Pods-iLittleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E2332B8BAF1E88D41825D9 /* Pods-iLittleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,11 +144,14 @@
 			isa = PBXGroup;
 			children = (
 				5150263E1FA8F7530056FEB7 /* AppDelegate.swift */,
-				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
-				51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */,
 				51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */,
+				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
 				51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */,
+				51474B5D1FACD0FD0088BC55 /* ConfigurationCollectionLayout.swift */,
+				51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */,
+				51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */,
 				515026421FA8F7530056FEB7 /* Main.storyboard */,
+				51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */,
 				515026481FA8F7530056FEB7 /* Assets.xcassets */,
 				5150264A1FA8F7530056FEB7 /* LaunchScreen.storyboard */,
 				5150264D1FA8F7530056FEB7 /* Info.plist */,
@@ -301,6 +310,7 @@
 			files = (
 				515026721FA913AA0056FEB7 /* .gitignore in Resources */,
 				5150264C1FA8F7530056FEB7 /* LaunchScreen.storyboard in Resources */,
+				51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */,
 				515026701FA8F8100056FEB7 /* GoogleService-Info.plist in Resources */,
 				515026491FA8F7530056FEB7 /* Assets.xcassets in Resources */,
 				515026441FA8F7530056FEB7 /* Main.storyboard in Resources */,
@@ -482,11 +492,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51474B5E1FACD0FD0088BC55 /* ConfigurationCollectionLayout.swift in Sources */,
 				515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */,
 				5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */,
+				51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */,
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,
-				51474B581FAA9AC60088BC55 /* LoginFlowNavigationController.swift in Sources */,
 				51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */,
+				51990DD51FAD01C500DE7A79 /* NotificationCategory.swift in Sources */,
 				51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
