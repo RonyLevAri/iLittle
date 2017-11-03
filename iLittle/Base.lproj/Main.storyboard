@@ -110,13 +110,62 @@
                     <view key="view" contentMode="scaleToFill" id="9v7-ph-Gco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="that you'd like to follow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT1-nt-uPz">
+                                <rect key="frame" x="20" y="144" width="335" height="19"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome rony!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-dm-2Gj">
+                                <rect key="frame" x="20" y="79" width="335" height="30"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose notification protocol " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d4-Vi-9Cx">
+                                <rect key="frame" x="20" y="117" width="335" height="19"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W2R-Dx-AmJ">
+                                <rect key="frame" x="10" y="171" width="355" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lWR-6s-ivU">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nT1-nt-uPz" firstAttribute="leading" secondItem="Q9C-Np-YW9" secondAttribute="leading" constant="20" id="0oc-7j-8U2"/>
+                            <constraint firstItem="Q9C-Np-YW9" firstAttribute="trailing" secondItem="nT1-nt-uPz" secondAttribute="trailing" constant="20" id="48z-y5-SxY"/>
+                            <constraint firstItem="Q9C-Np-YW9" firstAttribute="trailing" secondItem="8d4-Vi-9Cx" secondAttribute="trailing" constant="20" id="7lv-AB-025"/>
+                            <constraint firstItem="Q9C-Np-YW9" firstAttribute="trailing" secondItem="W2R-Dx-AmJ" secondAttribute="trailing" constant="10" id="8oE-Bz-YvO"/>
+                            <constraint firstItem="Q9C-Np-YW9" firstAttribute="bottom" secondItem="W2R-Dx-AmJ" secondAttribute="bottom" constant="10" id="JXu-fJ-DL2"/>
+                            <constraint firstItem="W2R-Dx-AmJ" firstAttribute="leading" secondItem="Q9C-Np-YW9" secondAttribute="leading" constant="10" id="KK7-Rv-atu"/>
+                            <constraint firstItem="RMs-dm-2Gj" firstAttribute="leading" secondItem="Q9C-Np-YW9" secondAttribute="leading" constant="20" id="PfU-Gb-IaY"/>
+                            <constraint firstItem="RMs-dm-2Gj" firstAttribute="top" secondItem="Q9C-Np-YW9" secondAttribute="top" constant="15" id="ZS6-vR-WnQ"/>
+                            <constraint firstItem="W2R-Dx-AmJ" firstAttribute="top" secondItem="nT1-nt-uPz" secondAttribute="bottom" constant="8" symbolic="YES" id="ZnC-sQ-PPA"/>
+                            <constraint firstItem="nT1-nt-uPz" firstAttribute="top" secondItem="8d4-Vi-9Cx" secondAttribute="bottom" constant="8" id="ZnX-5g-VXw"/>
+                            <constraint firstItem="Q9C-Np-YW9" firstAttribute="trailing" secondItem="RMs-dm-2Gj" secondAttribute="trailing" constant="20" id="b14-4K-MxT"/>
+                            <constraint firstItem="8d4-Vi-9Cx" firstAttribute="leading" secondItem="Q9C-Np-YW9" secondAttribute="leading" constant="20" id="dfc-IJ-YXc"/>
+                            <constraint firstItem="8d4-Vi-9Cx" firstAttribute="top" secondItem="RMs-dm-2Gj" secondAttribute="bottom" constant="8" id="qJJ-ou-Ebi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Q9C-Np-YW9"/>
                     </view>
+                    <connections>
+                        <outlet property="notificationCollectionView" destination="W2R-Dx-AmJ" id="wIe-hQ-9KX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-NT-JBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="-45"/>
+            <point key="canvasLocation" x="2981.5999999999999" y="-45.42728635682159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZPj-B3-BFf">
