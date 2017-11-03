@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		51474B581FAA9AC60088BC55 /* LoginFlowNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
+		51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */; };
 		5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150263E1FA8F7530056FEB7 /* AppDelegate.swift */; };
 		515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */; };
 		515026441FA8F7530056FEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515026421FA8F7530056FEB7 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		4B6A531D7FEF5725F3377C35 /* Pods-iLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittle/Pods-iLittle.release.xcconfig"; sourceTree = "<group>"; };
 		51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowNavigationController.swift; sourceTree = "<group>"; };
 		51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileDataAccessObject.swift; sourceTree = "<group>"; };
+		51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		5150263B1FA8F7530056FEB7 /* iLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5150263E1FA8F7530056FEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
 				51474B571FAA9AC60088BC55 /* LoginFlowNavigationController.swift */,
 				51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */,
+				51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */,
 				515026421FA8F7530056FEB7 /* Main.storyboard */,
 				515026481FA8F7530056FEB7 /* Assets.xcassets */,
 				5150264A1FA8F7530056FEB7 /* LaunchScreen.storyboard */,
@@ -484,6 +487,7 @@
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,
 				51474B581FAA9AC60088BC55 /* LoginFlowNavigationController.swift in Sources */,
 				51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */,
+				51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

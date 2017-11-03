@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import UserNotifications
 
 class InitialLoginViewController: UIViewController {
     
-    //MARK: attributes
+    //MARK: properties
     private var username: String?
     @IBOutlet weak var usernameTextField: UITextField!
     lazy var fileDataAccessobject = AppFileDataAccessObject.sharedInstance
@@ -20,55 +19,25 @@ class InitialLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
+        fileDataAccessobject.deleteFile()
     }
     
     //MARK: actions
     @IBAction func setInitialConfiguration(_ sender: UIButton) {
         usernameTextField.resignFirstResponder()
-        fileDataAccessobject.saveUserNameToFile(usernameTextField.text ?? "Jhon Doe")
+        username = usernameTextField.text ?? "Jhon Doe"
+        fileDataAccessobject.saveUserNameToFile(username!)
+        performSegue(withIdentifier: "configurationSegue", sender: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         usernameTextField.resignFirstResponder()
     }
     
-    //MARK: custom functions    
-    func scheduleNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "kusemek"
-        content.body = "arsabuk"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: {(error) in
-            if let error = error {
-                print(error)
-            } else {
-                print("notification scheduled")
-            }
-        })
-    }
-    
-    func doInitialAuthorizationFlow() {
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings(completionHandler: { (settings) in
-            if(settings.authorizationStatus == .authorized) {
-                // go to configuration screen
-                self.scheduleNotification()
-            } else {
-                // User has not given permissions
-                center.requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {(granted, error) in
-                    if let error = error {
-                        print(error)
-                    } else {
-                        if(granted) {
-                            // go to configuration screen
-                            self.scheduleNotification()
-                        }
-                    }
-                })
-            }
-        })
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let configurationViewController = segue.destination as? ConfigurationViewController {
+            configurationViewController.username = username
+        }
     }
 }
 
