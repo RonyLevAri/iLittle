@@ -76,7 +76,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="GoToConfiguration:" destination="ZJE-bQ-QYD" eventType="touchUpInside" id="Syq-3Y-oeJ"/>
+                                    <action selector="setInitialConfiguration:" destination="ZJE-bQ-QYD" eventType="touchUpInside" id="Q4Z-57-mlU"/>
                                 </connections>
                             </button>
                         </subviews>
