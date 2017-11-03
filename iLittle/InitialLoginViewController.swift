@@ -12,29 +12,27 @@ import UserNotifications
 class InitialLoginViewController: UIViewController {
     
     //MARK: attributes
-    var username: String?
+    private var username: String?
     @IBOutlet weak var usernameTextField: UITextField!
+    lazy var fileDataAccessobject = AppFileDataAccessObject.sharedInstance
     
-    //MARK: actions
-    @IBAction func GoToConfiguration(_ sender: UIButton) {
-        print("user name: \(usernameTextField.text!)")
-    }
-    
+    //MARK: view controller setup
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
     }
     
+    //MARK: actions
+    @IBAction func setInitialConfiguration(_ sender: UIButton) {
+        usernameTextField.resignFirstResponder()
+        fileDataAccessobject.saveUserNameToFile(usernameTextField.text ?? "Jhon Doe")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         usernameTextField.resignFirstResponder()
-        saveUserNameToFile()
     }
     
-    //MARK: custom functions
-    func saveUserNameToFile() {
-        
-    }
-    
+    //MARK: custom functions    
     func scheduleNotification() {
         let content = UNMutableNotificationContent()
         content.title = "kusemek"
