@@ -19,9 +19,21 @@ class ConfigurationViewController: UIViewController {
     fileprivate let rowSpacing = CGFloat(8)
     @IBOutlet weak var notificationCollectionView: UICollectionView!
     @IBOutlet weak var welcomLabel: UILabel!
+    private var notificationsAuthorizedByUser = false
     
     // todo: extract to external configuration file
     var data = [NotificationCategory]()
+    
+    //MARK: actions
+    @IBAction func gotoMainAppScreen(_ sender: UIButton) {
+        doInitialAuthorizationFlow()
+        if(notificationsAuthorizedByUser) {
+            performSegue(withIdentifier: "mainScreensegue", sender: self)
+        } else {
+            //todo: complete non happy path
+        }
+        
+    }
     
     //MARK view controller setup
     override func viewDidLoad() {
@@ -34,13 +46,19 @@ class ConfigurationViewController: UIViewController {
         data.append(NotificationCategory(category: "nositting", image: "heartbeat256"))
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mainViewController = segue.destination as? MainAppControlScreenViewController {
+            mainViewController.username = username
+            mainViewController.data = data
+        }
+    }
+    
     //MARK: custom methods
     func doInitialAuthorizationFlow() {
         let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings(completionHandler: { (settings) in
+        center.getNotificationSettings(completionHandler: { [unowned self] (settings) in
             if(settings.authorizationStatus == .authorized) {
-                // go to configuration screen
-                self.scheduleNotification()
+                self.notificationsAuthorizedByUser = true
             } else {
                 // User has not given permissions
                 center.requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {(granted, error) in
@@ -48,27 +66,10 @@ class ConfigurationViewController: UIViewController {
                         print(error)
                     } else {
                         if(granted) {
-                            // go to configuration screen
-                            self.scheduleNotification()
+                            self.notificationsAuthorizedByUser = true
                         }
                     }
                 })
-            }
-        })
-    }
-    
-    func scheduleNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "kusemek"
-        content.body = "arsabuk"
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: {(error) in
-            if let error = error {
-                print(error)
-            } else {
-                print("notification scheduled")
             }
         })
     }
