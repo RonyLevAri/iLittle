@@ -81,27 +81,16 @@ extension ConfigurationViewController: UICollectionViewDelegate {
         let cell = cell as! ConfigurationCollectionViewCell
         let item = data[indexPath.item]
         cell.icon.image = UIImage(named: item.image)
-        if(item.chosen) {
-            cell.checkFeedback.image = UIImage(named: "green_circle_check")
-        }
+        print("preparing cell at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].chosen)")
+        cell.checkFeedback.image = item.chosen ? UIImage(named: "green_circle_check") : UIImage(named: "gray_circle_check")
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell tappedt at \(indexPath.section) \(indexPath.item)")
-    }
-    
-    // change background color when user touches cell
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        data[indexPath.item].chosen = true
-        let cell = collectionView.cellForItem(at: indexPath) as! ConfigurationCollectionViewCell
-        cell.checkFeedback.image = UIImage(named: "green_circle_check")
-    }
-    
-    // change background color back when user releases touch
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        data[indexPath.item].chosen = false
-        let cell = collectionView.cellForItem(at: indexPath) as! ConfigurationCollectionViewCell
-        cell.checkFeedback.image = UIImage(named: "gray_circle_check")
+        print("cell tappedt at \(indexPath.section) \(indexPath.item) was chosen: \(data[indexPath.item].chosen)")
+        data[indexPath.item].chosen = !data[indexPath.item].chosen
+        let indexes = [indexPath,]
+        notificationCollectionView.reloadItems(at: indexes)
+        print("cell tappedt at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].chosen)")
     }
 }
 
