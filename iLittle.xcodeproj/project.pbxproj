@@ -11,6 +11,7 @@
 		510065641FADCC0600D2FCAF /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065631FADCC0600D2FCAF /* MainAppViewController.swift */; };
 		510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */; };
 		5100656C1FADE86A00D2FCAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656B1FADE86A00D2FCAF /* User.swift */; };
+		5100656E1FAE189800D2FCAF /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656D1FAE189800D2FCAF /* NotificationType.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
 		51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */; };
 		5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150263E1FA8F7530056FEB7 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		510065631FADCC0600D2FCAF /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccessObject.swift; sourceTree = "<group>"; };
 		5100656B1FADE86A00D2FCAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5100656D1FAE189800D2FCAF /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileDataAccessObject.swift; sourceTree = "<group>"; };
 		51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		5150263B1FA8F7530056FEB7 /* iLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 			children = (
 				51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */,
 				5100656B1FADE86A00D2FCAF /* User.swift */,
+				5100656D1FAE189800D2FCAF /* NotificationType.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				510065621FADC79000D2FCAF /* NotificationsController.swift in Sources */,
 				51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */,
 				510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */,
+				5100656E1FAE189800D2FCAF /* NotificationType.swift in Sources */,
 				5100656C1FADE86A00D2FCAF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

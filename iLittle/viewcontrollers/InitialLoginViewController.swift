@@ -13,20 +13,20 @@ class InitialLoginViewController: UIViewController {
     //MARK: properties
     private var username: String?
     @IBOutlet weak var usernameTextField: UITextField!
-    lazy var fileDataAccessobject = AppFileDataAccessObject.sharedInstance
     
     //MARK: view controller setup
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
-        fileDataAccessobject.deleteFile()
+        AppFileDataAccessObject.sharedInstance.deleteFile()
     }
     
     //MARK: actions
     @IBAction func setInitialConfiguration(_ sender: UIButton) {
         usernameTextField.resignFirstResponder()
         username = usernameTextField.text == "" ? "Jhon Doe" : usernameTextField.text
-        //fileDataAccessobject.saveUserNameToFile(username!)
+        AppFileDataAccessObject.sharedInstance.saveUserNameToFile(username!)
+        FirebaseAccessObject.sharedInstance.saveUser(username: username!)
         // UserDefaults.standard.set(username, forKey: "username")
         performSegue(withIdentifier: "configurationSegue", sender: self)
     }
