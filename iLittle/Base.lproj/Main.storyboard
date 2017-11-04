@@ -161,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="notificationCollectionView" destination="W2R-Dx-AmJ" id="wIe-hQ-9KX"/>
+                        <outlet property="welcomLabel" destination="RMs-dm-2Gj" id="shU-RD-ceU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-NT-JBK" userLabel="First Responder" sceneMemberID="firstResponder"/>

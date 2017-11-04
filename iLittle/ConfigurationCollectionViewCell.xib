@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_circle_check" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-ke-OwY" userLabel="checkedV">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray_circle_check" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-ke-OwY" userLabel="checkedV">
                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="Npy-Cn-FIT"/>
@@ -49,7 +49,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="green_circle_check" width="800" height="800"/>
+        <image name="gray_circle_check" width="800" height="800"/>
         <image name="heartbeat256" width="256" height="256"/>
     </resources>
 </document>

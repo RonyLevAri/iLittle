@@ -13,25 +13,25 @@ class ConfigurationViewController: UIViewController {
     
     //MARK: properties
     var username: String?
-    fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 10.0, bottom: 5.0, right: 10.0)
     fileprivate let columns = CGFloat(2)
     fileprivate let inset = CGFloat(8)
     fileprivate let columnSpacing = CGFloat(8)
     fileprivate let rowSpacing = CGFloat(8)
     @IBOutlet weak var notificationCollectionView: UICollectionView!
+    @IBOutlet weak var welcomLabel: UILabel!
     
     // todo: extract to external configuration file
     var data = [NotificationCategory]()
     
     //MARK view controller setup
     override func viewDidLoad() {
-        print(username!)
+        welcomLabel.text = "Welcome \(username!)!"
         notificationCollectionView.delegate = self
         notificationCollectionView.dataSource = self
         notificationCollectionView.register(UINib(nibName: "ConfigurationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "selectionCell")
-        data.append(NotificationCategory(protocolName: "hara"))
-        data.append(NotificationCategory(protocolName: "pipi"))
-        data.append(NotificationCategory(protocolName: "kaki"))
+        data.append(NotificationCategory(category: "drinking", image: "lemonade_glass256"))
+        data.append(NotificationCategory(category: "moving", image: "step256"))
+        data.append(NotificationCategory(category: "nositting", image: "heartbeat256"))
     }
     
     //MARK: custom methods
@@ -76,30 +76,48 @@ class ConfigurationViewController: UIViewController {
 
 extension ConfigurationViewController: UICollectionViewDelegate {
     
+    // cell specific display setup
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? ConfigurationCollectionViewCell {
-            cell.icon.image = UIImage(named: "heartbeat256")
-        } else {
-            print("no such cell")
+        let cell = cell as! ConfigurationCollectionViewCell
+        let item = data[indexPath.item]
+        cell.icon.image = UIImage(named: item.image)
+        if(item.chosen) {
+            cell.checkFeedback.image = UIImage(named: "green_circle_check")
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("cell tappedt at \(indexPath.section) \(indexPath.item)")
     }
+    
+    // change background color when user touches cell
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        data[indexPath.item].chosen = true
+        let cell = collectionView.cellForItem(at: indexPath) as! ConfigurationCollectionViewCell
+        cell.checkFeedback.image = UIImage(named: "green_circle_check")
+    }
+    
+    // change background color back when user releases touch
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        data[indexPath.item].chosen = false
+        let cell = collectionView.cellForItem(at: indexPath) as! ConfigurationCollectionViewCell
+        cell.checkFeedback.image = UIImage(named: "gray_circle_check")
+    }
 }
 
 extension ConfigurationViewController: UICollectionViewDataSource {
     
+    // return number of sections in collection view
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let rows = Int((data.count / Int(columns))) + 1
-        return rows
+        return 1
     }
     
+    // returns how many items in each section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(columns)
+        return data.count
     }
     
+    // return cell type for item at
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectionCell", for: indexPath) as! ConfigurationCollectionViewCell
         return cell

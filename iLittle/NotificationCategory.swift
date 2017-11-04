@@ -9,9 +9,12 @@
 import Foundation
 
 class NotificationCategory {
-    let protocolName: String
+    let category: String
+    let image: String
+    var chosen: Bool = false
     
-    init(protocolName: String) {
-        self.protocolName = protocolName
+    init(category: String, image: String) {
+        self.category = category
+        self.image = image
     }
 }
