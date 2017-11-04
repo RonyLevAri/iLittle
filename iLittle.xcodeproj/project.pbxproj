@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		510065621FADC79000D2FCAF /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065611FADC79000D2FCAF /* NotificationsController.swift */; };
-		510065641FADCC0600D2FCAF /* MainAppControlScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */; };
+		510065641FADCC0600D2FCAF /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065631FADCC0600D2FCAF /* MainAppViewController.swift */; };
 		510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */; };
 		5100656C1FADE86A00D2FCAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656B1FADE86A00D2FCAF /* User.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
@@ -53,7 +53,7 @@
 		2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6A531D7FEF5725F3377C35 /* Pods-iLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittle/Pods-iLittle.release.xcconfig"; sourceTree = "<group>"; };
 		510065611FADC79000D2FCAF /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
-		510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppControlScreenViewController.swift; sourceTree = "<group>"; };
+		510065631FADCC0600D2FCAF /* MainAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccessObject.swift; sourceTree = "<group>"; };
 		5100656B1FADE86A00D2FCAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileDataAccessObject.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			children = (
 				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
 				51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */,
-				510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */,
+				510065631FADCC0600D2FCAF /* MainAppViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */,
-				510065641FADCC0600D2FCAF /* MainAppControlScreenViewController.swift in Sources */,
+				510065641FADCC0600D2FCAF /* MainAppViewController.swift in Sources */,
 				5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */,
 				51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */,
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,
