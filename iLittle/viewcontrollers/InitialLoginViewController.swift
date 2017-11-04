@@ -26,7 +26,8 @@ class InitialLoginViewController: UIViewController {
     @IBAction func setInitialConfiguration(_ sender: UIButton) {
         usernameTextField.resignFirstResponder()
         username = usernameTextField.text == "" ? "Jhon Doe" : usernameTextField.text
-        fileDataAccessobject.saveUserNameToFile(username!)
+        //fileDataAccessobject.saveUserNameToFile(username!)
+        // UserDefaults.standard.set(username, forKey: "username")
         performSegue(withIdentifier: "configurationSegue", sender: self)
     }
     

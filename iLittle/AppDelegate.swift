@@ -20,24 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
-        if(UserDefaults.standard.value(forKey: "username") as? String) == nil {
-            // show onboarding screen
+        let username = AppFileDataAccessObject.sharedInstance.readNameFromFile()
+        if username != nil {
             vc = storyboard.instantiateViewController(withIdentifier: "onboardFlow")
         } else {
-            // show main screen
             vc = storyboard.instantiateInitialViewController()!
         }
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         FirebaseApp.configure()
-//        Auth.auth().signIn(withEmail: "tahat@gmail.com", password: "123456", completion: { (user, error) in
-//            if error == nil {
-//                print(user?.email ?? "no email")
-//                print(user?.uid ?? "no uid")
-//                print("\(type(of: user?.uid))")
-//            }
-//        })
-        // Override point for customization after application launch.
         return true
     }
 
