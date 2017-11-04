@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510065621FADC79000D2FCAF /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065611FADC79000D2FCAF /* NotificationsController.swift */; };
+		510065641FADCC0600D2FCAF /* MainAppControlScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */; };
+		510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */; };
+		5100656C1FADE86A00D2FCAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656B1FADE86A00D2FCAF /* User.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
 		51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */; };
 		5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150263E1FA8F7530056FEB7 /* AppDelegate.swift */; };
@@ -48,6 +52,10 @@
 		21B9B533F1D0A9091EA186F0 /* Pods-iLittleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6A531D7FEF5725F3377C35 /* Pods-iLittle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittle.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittle/Pods-iLittle.release.xcconfig"; sourceTree = "<group>"; };
+		510065611FADC79000D2FCAF /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppControlScreenViewController.swift; sourceTree = "<group>"; };
+		510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccessObject.swift; sourceTree = "<group>"; };
+		5100656B1FADE86A00D2FCAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileDataAccessObject.swift; sourceTree = "<group>"; };
 		51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		5150263B1FA8F7530056FEB7 /* iLittle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLittle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +123,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		510065651FADCC4800D2FCAF /* bl */ = {
+			isa = PBXGroup;
+			children = (
+				510065611FADC79000D2FCAF /* NotificationsController.swift */,
+				51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */,
+				510065681FADCE7300D2FCAF /* FirebaseAccessObject.swift */,
+			);
+			path = bl;
+			sourceTree = "<group>";
+		};
+		510065661FADCC8300D2FCAF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */,
+				5100656B1FADE86A00D2FCAF /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		510065671FADCC9F00D2FCAF /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
+				51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */,
+				510065631FADCC0600D2FCAF /* MainAppControlScreenViewController.swift */,
+			);
+			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		5100656A1FADCF2B00D2FCAF /* customviews */ = {
+			isa = PBXGroup;
+			children = (
+				51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */,
+			);
+			path = customviews;
+			sourceTree = "<group>";
+		};
 		515026321FA8F7530056FEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +187,10 @@
 			isa = PBXGroup;
 			children = (
 				5150263E1FA8F7530056FEB7 /* AppDelegate.swift */,
-				51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */,
-				515026401FA8F7530056FEB7 /* InitialLoginViewController.swift */,
-				51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */,
-				51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */,
-				51990DD41FAD01C500DE7A79 /* NotificationCategory.swift */,
+				5100656A1FADCF2B00D2FCAF /* customviews */,
+				510065671FADCC9F00D2FCAF /* viewcontrollers */,
+				510065661FADCC8300D2FCAF /* model */,
+				510065651FADCC4800D2FCAF /* bl */,
 				515026421FA8F7530056FEB7 /* Main.storyboard */,
 				51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */,
 				515026481FA8F7530056FEB7 /* Assets.xcassets */,
@@ -454,12 +498,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iLittle/Pods-iLittle-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,12 +536,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */,
+				510065641FADCC0600D2FCAF /* MainAppControlScreenViewController.swift in Sources */,
 				5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */,
 				51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */,
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,
 				51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */,
 				51990DD51FAD01C500DE7A79 /* NotificationCategory.swift in Sources */,
+				510065621FADC79000D2FCAF /* NotificationsController.swift in Sources */,
 				51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */,
+				510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */,
+				5100656C1FADE86A00D2FCAF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
