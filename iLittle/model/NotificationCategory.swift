@@ -12,6 +12,7 @@ class NotificationCategory {
     let category: String
     let image: String
     var chosen: Bool = false
+    var isActive = false
     
     init(category: String, image: String) {
         self.category = category
