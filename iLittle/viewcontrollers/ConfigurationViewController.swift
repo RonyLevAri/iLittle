@@ -28,11 +28,11 @@ class ConfigurationViewController: UIViewController {
     @IBAction func gotoMainAppScreen(_ sender: UIButton) {
         doInitialAuthorizationFlow()
         if(notificationsAuthorizedByUser) {
-            performSegue(withIdentifier: "mainScreensegue", sender: self)
+            // performSegue(withIdentifier: "mainScreensegue", sender: self)
         } else {
             //todo: complete non happy path
         }
-        
+        FirebaseAccessObject.sharedInstance.saveNotifications(data)
     }
     
     //MARK view controller setup
@@ -75,6 +75,7 @@ class ConfigurationViewController: UIViewController {
     }
 }
 
+//MARK: flow collectionview delegate
 extension ConfigurationViewController: UICollectionViewDelegate {
     
     // cell specific display setup
@@ -95,6 +96,7 @@ extension ConfigurationViewController: UICollectionViewDelegate {
     }
 }
 
+//MARK: flow datasource delegate
 extension ConfigurationViewController: UICollectionViewDataSource {
     
     // return number of sections in collection view
@@ -115,6 +117,7 @@ extension ConfigurationViewController: UICollectionViewDataSource {
     
 }
 
+//MARK: flow layout delegate
 extension ConfigurationViewController: UICollectionViewDelegateFlowLayout {
 
     // add insets to the entire collection view

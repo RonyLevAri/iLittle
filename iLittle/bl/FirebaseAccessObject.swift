@@ -8,6 +8,11 @@
 
 import Foundation
 import Firebase
+
+protocol FirebasedataAccessDelgate: class {
+    
+}
+
 //todo: add authentication logic to get the user details
 class FirebaseAccessObject {
     
@@ -18,8 +23,11 @@ class FirebaseAccessObject {
     }
     
     //MARK: properties
+    weak var delegat: FirebasedataAccessDelgate?
     let usersRef = Database.database().reference().child("users")
-    var currentUser: User?
+    let notificationRef = Database.database().reference().child("notifications")
+    
+    //MARK: database listeners
     var authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
         guard user != nil else {
             // alert app that login is needed
@@ -27,10 +35,44 @@ class FirebaseAccessObject {
         }
     }
     
+    var usersListener = Database.database().reference().child("users").observe(.value, with: {(snapshot) in
+        // call delegate
+        print("users changed")
+        print(snapshot)
+    })
+    
+    var notificationListener = Database.database().reference().child("notifications").observe(.value, with: {(snapshot) in
+        // call delegate
+        print("notifications changed")
+        print(snapshot)
+    })
+    
+    //MARK: helper functions
+    private func formatDate(dateString: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = ""
+    }
+    
+    //MARK: api
     func saveUser(username: String) {
-        let dateString = String(describing: Date())
-        let params = ["username": username, "date": dateString]
-        usersRef.childByAutoId().setValue(params)
+        let key = usersRef.childByAutoId().key
+        let params = ["username": username]
+        usersRef.child(key).setValue(params)
+        usersRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
+    }
+    
+    func saveNotifications(_ notifications: [NotificationItem]) {
+        notifications.forEach { (notification) in
+            let key = notificationRef.childByAutoId().key
+            let stringParams = [
+                "user": notification.user,
+                "category": notification.category,
+                "image": notification.image,
+                "isActive": notification.isActive ? "Y" : "N"
+            ]
+            notificationRef.child(key).setValue(stringParams)
+            notificationRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
+        }
     }
     
     func getUserPrefs(forUser user: String) {
