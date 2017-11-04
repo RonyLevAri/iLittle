@@ -18,7 +18,6 @@ class InitialLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
-        AppFileDataAccessObject.sharedInstance.deleteFile()
     }
     
     //MARK: actions

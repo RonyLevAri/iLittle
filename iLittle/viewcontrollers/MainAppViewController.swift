@@ -12,7 +12,7 @@ class MainAppViewController: UIViewController {
 
     //MARK: propertires
     var username: String?
-    var data = [NotificationCategory]()
+    var data = [NotificationItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

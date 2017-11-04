@@ -22,7 +22,7 @@ class ConfigurationViewController: UIViewController {
     private var notificationsAuthorizedByUser = false
     
     // todo: extract to external configuration file
-    var data = [NotificationCategory]()
+    var data = [NotificationItem]()
     
     //MARK: actions
     @IBAction func gotoMainAppScreen(_ sender: UIButton) {
@@ -41,13 +41,13 @@ class ConfigurationViewController: UIViewController {
         notificationCollectionView.delegate = self
         notificationCollectionView.dataSource = self
         notificationCollectionView.register(UINib(nibName: "ConfigurationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "selectionCell")
-        data.append(NotificationCategory(category: "drinking", image: "lemonade_glass256"))
-        data.append(NotificationCategory(category: "moving", image: "step256"))
-        data.append(NotificationCategory(category: "nositting", image: "heartbeat256"))
+        data.append(NotificationItem(category: "drinking", image: "lemonade_glass256", user: username!))
+        data.append(NotificationItem(category: "moving", image: "step256", user: username!))
+        data.append(NotificationItem(category: "nositting", image: "heartbeat256", user: username!))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mainViewController = segue.destination as? MainAppControlScreenViewController {
+        if let mainViewController = segue.destination as? MainAppViewController {
             mainViewController.username = username
             mainViewController.data = data
         }
@@ -82,16 +82,16 @@ extension ConfigurationViewController: UICollectionViewDelegate {
         let cell = cell as! ConfigurationCollectionViewCell
         let item = data[indexPath.item]
         cell.icon.image = UIImage(named: item.image)
-        print("preparing cell at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].chosen)")
-        cell.checkFeedback.image = item.chosen ? UIImage(named: "green_circle_check") : UIImage(named: "gray_circle_check")
+        print("preparing cell at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].isActive)")
+        cell.checkFeedback.image = item.isActive ? UIImage(named: "green_circle_check") : UIImage(named: "gray_circle_check")
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell tappedt at \(indexPath.section) \(indexPath.item) was chosen: \(data[indexPath.item].chosen)")
-        data[indexPath.item].chosen = !data[indexPath.item].chosen
+        print("cell tappedt at \(indexPath.section) \(indexPath.item) was chosen: \(data[indexPath.item].isActive)")
+        data[indexPath.item].isActive = !data[indexPath.item].isActive
         let indexes = [indexPath,]
         notificationCollectionView.reloadItems(at: indexes)
-        print("cell tappedt at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].chosen)")
+        print("cell tappedt at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].isActive)")
     }
 }
 
@@ -137,5 +137,4 @@ extension ConfigurationViewController: UICollectionViewDelegateFlowLayout {
         let width = Int((notificationCollectionView.frame.width / columns) - (inset + columnSpacing))
         return CGSize(width: width, height: width)
     }
-    
 }

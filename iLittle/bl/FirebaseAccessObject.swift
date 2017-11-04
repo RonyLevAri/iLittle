@@ -8,9 +8,8 @@
 
 import Foundation
 import Firebase
-
+//todo: add authentication logic to get the user details
 class FirebaseAccessObject {
-    
     
     //MARK: object singleton reference
     static let sharedInstance = FirebaseAccessObject()
@@ -19,7 +18,7 @@ class FirebaseAccessObject {
     }
     
     //MARK: properties
-    let rootRef = Database.database().reference().child("user1")
+    let usersRef = Database.database().reference().child("users")
     var currentUser: User?
     var authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
         guard user != nil else {
@@ -28,13 +27,15 @@ class FirebaseAccessObject {
         }
     }
     
-    func write(data: String) {
-        
+    func saveUser(username: String) {
+        let dateString = String(describing: Date())
+        let params = ["username": username, "date": dateString]
+        usersRef.childByAutoId().setValue(params)
     }
     
-    func readData(forUser user: String) {
-        let userRef = rootRef.child(user)
-        userRef.observe(.value, with: { (snap) in
+    func getUserPrefs(forUser user: String) {
+        let usernameRef = usersRef.child("username")
+        usernameRef.observe(.value, with: { (snap) in
             print(snap.value.debugDescription)
         })
     }
