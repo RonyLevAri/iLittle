@@ -37,7 +37,7 @@ class ConfigurationViewController: UIViewController {
             //todo: complete non happy path
         }
         FirebaseAccessObject.sharedInstance.saveNotifications(data)
-        performSegue(withIdentifier: "mainScreensegue", sender: self)
+        performSegue(withIdentifier: "mainScreenSegue", sender: self)
     }
     
     //MARK view controller setup
@@ -52,11 +52,15 @@ class ConfigurationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mainViewController = segue.destination as? MainAppViewController {
-            mainViewController.username = username
-            mainViewController.data = data
-            mainViewController.onBoardFlowNavigationController = self.view.window!.rootViewController as? UINavigationController
-        }
+        let navVC = segue.destination as? UINavigationController
+        let mainViewController = navVC?.viewControllers.first as! MainAppViewController
+        mainViewController.username = username
+        mainViewController.data = data
+//        if let mainViewController = segue.destination as? MainAppViewController {
+//            mainViewController.username = username
+//            mainViewController.data = data
+//            // mainViewController.onBoardFlowNavigationController = self.view.window!.rootViewController as? UINavigationController
+//        }
     }
     
     //MARK: custom methods
