@@ -103,21 +103,52 @@
             </objects>
             <point key="canvasLocation" x="2014" y="-45"/>
         </scene>
-        <!--Main App View Controller-->
+        <!--Notifications-->
         <scene sceneID="C7i-5O-DWf">
             <objects>
                 <viewController id="k2Q-gu-bwf" customClass="MainAppViewController" customModule="iLittle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lm8-5H-i2s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mDs-3U-sh7">
+                                <rect key="frame" x="16" y="64" width="343" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PpQ-OC-obi">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q89-4J-slX">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="GdW-XS-Uzh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7589504131" green="0.83743780850000005" blue="0.79786306839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2OK-xI-e1c" firstAttribute="trailing" secondItem="mDs-3U-sh7" secondAttribute="trailing" constant="16" id="0ye-Mz-49w"/>
+                            <constraint firstItem="mDs-3U-sh7" firstAttribute="leading" secondItem="2OK-xI-e1c" secondAttribute="leading" constant="16" id="Djf-gZ-4gV"/>
+                            <constraint firstItem="mDs-3U-sh7" firstAttribute="top" secondItem="2OK-xI-e1c" secondAttribute="top" id="LjB-hf-WNs"/>
+                            <constraint firstItem="q89-4J-slX" firstAttribute="leading" secondItem="2OK-xI-e1c" secondAttribute="leading" id="byz-e2-nYn"/>
+                            <constraint firstItem="q89-4J-slX" firstAttribute="bottom" secondItem="2OK-xI-e1c" secondAttribute="bottom" id="c0Q-tk-otO"/>
+                            <constraint firstItem="q89-4J-slX" firstAttribute="trailing" secondItem="2OK-xI-e1c" secondAttribute="trailing" id="jAS-bP-cO2"/>
+                            <constraint firstItem="q89-4J-slX" firstAttribute="top" secondItem="mDs-3U-sh7" secondAttribute="bottom" constant="8" id="vAL-3z-Hjc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2OK-xI-e1c"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y9o-sG-Xc2"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="Y9o-sG-Xc2"/>
+                    <connections>
+                        <outlet property="viewCollection" destination="mDs-3U-sh7" id="mY6-BE-BeZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEV-Wb-q1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="731"/>
+            <point key="canvasLocation" x="2184.8000000000002" y="730.88455772113946"/>
         </scene>
         <!--Configuration View Controller-->
         <scene sceneID="PYR-PK-A3o">
@@ -198,7 +229,7 @@
                     <connections>
                         <outlet property="notificationCollectionView" destination="W2R-Dx-AmJ" id="wIe-hQ-9KX"/>
                         <outlet property="welcomLabel" destination="RMs-dm-2Gj" id="shU-RD-ceU"/>
-                        <segue destination="dk8-kc-kos" kind="showDetail" identifier="mainScreensegue" id="4UH-Hz-cob"/>
+                        <segue destination="dk8-kc-kos" kind="showDetail" identifier="mainScreenSegue" id="4UH-Hz-cob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-NT-JBK" userLabel="First Responder" sceneMemberID="firstResponder"/>

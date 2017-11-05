@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyanmarSangamMN.ttc">
+            <string>MyanmarSangamMN</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,7 +27,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="379" height="292"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0V-JK-Hmg">
-                                <rect key="frame" x="0.0" y="243" width="379" height="49"/>
+                                <rect key="frame" x="0.0" y="232" width="379" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FUt-kU-uQR"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="done" id="Tbe-nY-ICU">
                                         <connections>
@@ -63,21 +71,32 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.40784313725490196" green="0.54117647058823526" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRd-c8-Y1L">
-                                <rect key="frame" x="168.5" y="136" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H03-lm-PXq">
+                                <rect key="frame" x="0.0" y="0.0" width="379" height="232"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h4-yh-ai1">
+                                        <rect key="frame" x="135.5" y="86" width="107.5" height="61"/>
+                                        <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9h4-yh-ai1" firstAttribute="centerY" secondItem="H03-lm-PXq" secondAttribute="centerY" id="3mD-Qk-tir"/>
+                                    <constraint firstItem="9h4-yh-ai1" firstAttribute="centerX" secondItem="H03-lm-PXq" secondAttribute="centerX" id="zrz-dD-YuG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="R0V-JK-Hmg" firstAttribute="top" secondItem="WRd-c8-Y1L" secondAttribute="bottom" constant="86" id="XRF-xm-DuH"/>
-                            <constraint firstItem="WRd-c8-Y1L" firstAttribute="centerY" secondItem="OV1-DD-shm" secondAttribute="centerY" id="eEd-Dd-Jdl"/>
+                            <constraint firstItem="H03-lm-PXq" firstAttribute="top" secondItem="OV1-DD-shm" secondAttribute="top" id="KUr-EN-Tv2"/>
+                            <constraint firstAttribute="trailing" secondItem="H03-lm-PXq" secondAttribute="trailing" id="cQE-gV-Tr4"/>
                             <constraint firstAttribute="trailing" secondItem="R0V-JK-Hmg" secondAttribute="trailing" id="jkf-8a-bql"/>
-                            <constraint firstItem="WRd-c8-Y1L" firstAttribute="centerX" secondItem="OV1-DD-shm" secondAttribute="centerX" id="nGG-pI-BS4"/>
                             <constraint firstItem="R0V-JK-Hmg" firstAttribute="leading" secondItem="OV1-DD-shm" secondAttribute="leading" id="neN-vN-ST8"/>
+                            <constraint firstItem="R0V-JK-Hmg" firstAttribute="top" secondItem="H03-lm-PXq" secondAttribute="bottom" id="p8V-l5-bk5"/>
                             <constraint firstAttribute="bottom" secondItem="R0V-JK-Hmg" secondAttribute="bottom" id="qYK-RJ-PbA"/>
+                            <constraint firstItem="H03-lm-PXq" firstAttribute="leading" secondItem="OV1-DD-shm" secondAttribute="leading" id="w4L-gY-Wfb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -91,7 +110,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="379" height="292"/>
             <connections>
-                <outlet property="label" destination="WRd-c8-Y1L" id="vHG-TL-rYx"/>
+                <outlet property="label" destination="9h4-yh-ai1" id="G2N-cB-c7z"/>
                 <outlet property="toolbar" destination="R0V-JK-Hmg" id="ceb-NC-siJ"/>
             </connections>
             <point key="canvasLocation" x="197.5" y="226"/>
