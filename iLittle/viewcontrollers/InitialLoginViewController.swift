@@ -10,6 +10,10 @@ import UIKit
 
 class InitialLoginViewController: UIViewController {
     
+    deinit {
+        print("initial login dismissed")
+    }
+    
     //MARK: properties
     private var username: String?
     @IBOutlet weak var usernameTextField: UITextField!

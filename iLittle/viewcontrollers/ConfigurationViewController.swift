@@ -11,6 +11,10 @@ import UserNotifications
 
 class ConfigurationViewController: UIViewController {
     
+    deinit {
+        print("configuration dismissed")
+    }
+    
     //MARK: properties
     var username: String?
     fileprivate let columns = CGFloat(2)
@@ -28,11 +32,12 @@ class ConfigurationViewController: UIViewController {
     @IBAction func gotoMainAppScreen(_ sender: UIButton) {
         doInitialAuthorizationFlow()
         if(notificationsAuthorizedByUser) {
-            // performSegue(withIdentifier: "mainScreensegue", sender: self)
+            //todo: why isn't call on second time??
         } else {
             //todo: complete non happy path
         }
         FirebaseAccessObject.sharedInstance.saveNotifications(data)
+        performSegue(withIdentifier: "mainScreensegue", sender: self)
     }
     
     //MARK view controller setup
@@ -50,6 +55,7 @@ class ConfigurationViewController: UIViewController {
         if let mainViewController = segue.destination as? MainAppViewController {
             mainViewController.username = username
             mainViewController.data = data
+            mainViewController.onBoardFlowNavigationController = self.view.window!.rootViewController as? UINavigationController
         }
     }
     
@@ -83,16 +89,13 @@ extension ConfigurationViewController: UICollectionViewDelegate {
         let cell = cell as! ConfigurationCollectionViewCell
         let item = data[indexPath.item]
         cell.icon.image = UIImage(named: item.image)
-        print("preparing cell at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].isActive)")
         cell.checkFeedback.image = item.isActive ? UIImage(named: "green_circle_check") : UIImage(named: "gray_circle_check")
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell tappedt at \(indexPath.section) \(indexPath.item) was chosen: \(data[indexPath.item].isActive)")
         data[indexPath.item].isActive = !data[indexPath.item].isActive
         let indexes = [indexPath,]
         notificationCollectionView.reloadItems(at: indexes)
-        print("cell tappedt at \(indexPath.section) \(indexPath.item) is now chosen: \(data[indexPath.item].isActive)")
     }
 }
 
