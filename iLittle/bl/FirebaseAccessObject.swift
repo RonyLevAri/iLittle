@@ -37,14 +37,14 @@ class FirebaseAccessObject {
     
     var usersListener = Database.database().reference().child("users").observe(.value, with: {(snapshot) in
         // call delegate
-        print("users changed")
-        print(snapshot)
+        //print("users changed")
+        //print(snapshot)
     })
     
     var notificationListener = Database.database().reference().child("notifications").observe(.value, with: {(snapshot) in
         // call delegate
-        print("notifications changed")
-        print(snapshot)
+        //print("notifications changed")
+        //print(snapshot)
     })
     
     //MARK: helper functions
@@ -54,6 +54,7 @@ class FirebaseAccessObject {
     }
     
     //MARK: api
+    // constructed with the help of https://www.youtube.com/watch?v=YqpdgJ24R7E
     func saveUser(username: String) {
         let key = usersRef.childByAutoId().key
         let params = ["username": username]
