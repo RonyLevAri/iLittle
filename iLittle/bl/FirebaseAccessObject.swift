@@ -26,6 +26,7 @@ class FirebaseAccessObject {
     weak var delegat: FirebasedataAccessDelgate?
     let usersRef = Database.database().reference().child("users")
     let notificationRef = Database.database().reference().child("notifications")
+    let dataRef = Database.database().reference().child("data")
     
     //MARK: database listeners
     var authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -55,24 +56,31 @@ class FirebaseAccessObject {
     
     //MARK: api
     // constructed with the help of https://www.youtube.com/watch?v=YqpdgJ24R7E
-    func saveUser(username: String) {
-        let key = usersRef.childByAutoId().key
-        let params = ["username": username]
-        usersRef.child(key).setValue(params)
-        usersRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
+    func saveUserConfiguration(username: String, notifications: [NotificationItem]) -> String{
+        let key = saveUser(username)
+        saveNotifications(forUserAt: key, notifications)
+        return key
     }
     
-    func saveNotifications(_ notifications: [NotificationItem]) {
+    func saveUser(_ username: String) -> String {
+        let key = dataRef.childByAutoId().key
+        let params = ["username": username]
+        dataRef.child(key).setValue(params)
+        dataRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
+        return key
+    }
+    // todo: chane notification structure (username is redundant)
+    func saveNotifications(forUserAt key: String, _ notifications: [NotificationItem]) {
         notifications.forEach { (notification) in
-            let key = notificationRef.childByAutoId().key
+            let notificationKey = dataRef.child(key).childByAutoId().key
             let stringParams = [
                 "user": notification.user,
                 "category": notification.category,
                 "image": notification.image,
                 "isActive": notification.isActive ? "Y" : "N"
             ]
-            notificationRef.child(key).setValue(stringParams)
-            notificationRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
+            dataRef.child(key).child(notificationKey).setValue(stringParams)
+            dataRef.child(key).child(notificationKey).child("timestamp").setValue(ServerValue.timestamp())
         }
     }
     

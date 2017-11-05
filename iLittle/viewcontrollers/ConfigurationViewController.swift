@@ -36,8 +36,13 @@ class ConfigurationViewController: UIViewController {
         } else {
             //todo: complete non happy path
         }
-        FirebaseAccessObject.sharedInstance.saveNotifications(data)
+        saveUserConfiguration()
         performSegue(withIdentifier: "mainScreenSegue", sender: self)
+    }
+    
+    func saveUserConfiguration() {
+        let userKey = FirebaseAccessObject.sharedInstance.saveUserConfiguration(username: username!, notifications: data)
+        AppFileDataAccessObject.sharedInstance.saveUserNameToFile(userKey)
     }
     
     //MARK view controller setup
