@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainAppViewController: UIViewController {
 
@@ -19,23 +20,27 @@ class MainAppViewController: UIViewController {
     fileprivate let columnSpacing = CGFloat(0)
     fileprivate let rowSpacing = CGFloat(20)
     @IBOutlet weak var viewCollection: UICollectionView!
+    var dataAccessObject: FirebaseAccessObject?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let uid = AppFileDataAccessObject.sharedInstance.readNameFromFile()!
+        dataAccessObject = FirebaseAccessObject.sharedInstance
+        dataAccessObject!.delegate = self
         viewCollection.delegate = self
         viewCollection.dataSource = self
         viewCollection.register(UINib(nibName: "MainNotificationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "notificationCell")
-        loadUserData()
-//        if onBoardFlowNavigationController != nil {
-//            print("there is a view controller in prop!")
-//            //onBoardFlowNavigationController?.popViewController(animated: true)
-//            //onBoardFlowNavigationController?.dismiss(animated: true, completion: nil)
-//        }
+        dataAccessObject!.listenToDataChanges(forUser: uid)
     }
+
+}
+
+extension MainAppViewController: FirebasedataAccessDelgate {
     
-    func loadUserData() {
-        print(AppFileDataAccessObject.sharedInstance.readNameFromFile()!)
-        // use file user key to retrieve data
+    func dataChangedFor(_ user: User) {
+        data = user.notifications
+        self.viewCollection.reloadData()
     }
 }
 
@@ -76,28 +81,19 @@ extension MainAppViewController: MainNotificationCellDelegate {
 extension MainAppViewController: UICollectionViewDelegate {
     // cell specific display setup
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print("preparing cell")
         let cell = cell as! MainNotificationCollectionViewCell
         cell.notificationCellDelegate = self
         let item = data[indexPath.item]
-        // cell.label.text = item.category
-        if(cell.label.text == item.category) {
-            cell.label.text = "changed"
-        } else {
-            cell.label.text = item.category
-        }
+        cell.label.text = String(item.isActive)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("cell tapped at \(indexPath)")
-//        data[indexPath.item].isActive = !data[indexPath.item].isActive
-//        let indexes = [indexPath,]
-//        viewController.reloadItems(at: indexes)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        return false // all cell items you do not want to be selectable
-//    }
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return false // all cell items you do not want to be selectable
+    }
 }
 
 extension MainAppViewController: UICollectionViewDataSource {

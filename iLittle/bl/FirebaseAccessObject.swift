@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 protocol FirebasedataAccessDelgate: class {
-    
+    func dataChangedFor(_ user: User)
 }
 
 //todo: add authentication logic to get the user details
@@ -23,7 +23,7 @@ class FirebaseAccessObject {
     }
     
     //MARK: properties
-    weak var delegat: FirebasedataAccessDelgate?
+    weak var delegate: FirebasedataAccessDelgate?
     let usersRef = Database.database().reference().child("users")
     let notificationRef = Database.database().reference().child("notifications")
     let dataRef = Database.database().reference().child("data")
@@ -36,17 +36,6 @@ class FirebaseAccessObject {
         }
     }
     
-    var usersListener = Database.database().reference().child("users").observe(.value, with: {(snapshot) in
-        // call delegate
-        //print("users changed")
-        //print(snapshot)
-    })
-    
-    var notificationListener = Database.database().reference().child("notifications").observe(.value, with: {(snapshot) in
-        // call delegate
-        //print("notifications changed")
-        //print(snapshot)
-    })
     
     //MARK: helper functions
     private func formatDate(dateString: String) {
@@ -69,25 +58,42 @@ class FirebaseAccessObject {
         dataRef.child(key).child("timestamp").setValue(ServerValue.timestamp())
         return key
     }
+    
     // todo: chane notification structure (username is redundant)
     func saveNotifications(forUserAt key: String, _ notifications: [NotificationItem]) {
         notifications.forEach { (notification) in
             let notificationKey = dataRef.child(key).childByAutoId().key
             let stringParams = [
-                "user": notification.user,
                 "category": notification.category,
                 "image": notification.image,
                 "isActive": notification.isActive ? "Y" : "N"
             ]
-            dataRef.child(key).child(notificationKey).setValue(stringParams)
-            dataRef.child(key).child(notificationKey).child("timestamp").setValue(ServerValue.timestamp())
+            dataRef.child(key).child("notifications").child(notificationKey).setValue(stringParams)
+            dataRef.child(key).child("notifications")
+                .child(notificationKey).child("timestamp").setValue(ServerValue.timestamp())
         }
     }
     
-    func getUserPrefs(forUser user: String) {
-        let usernameRef = usersRef.child("username")
-        usernameRef.observe(.value, with: { (snap) in
-            print(snap.value.debugDescription)
+    func listenToDataChanges(forUser uid: String) {
+        dataRef.child(uid).observe(.value, with: { [unowned self] (snapshot) in
+            var notifications = [NotificationItem]()
+            var v  = snapshot.value as? NSDictionary
+            let username = v?["username"] as! String
+            let enumerator = snapshot.childSnapshot(forPath: "notifications").children
+            
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                v = rest.value as? NSDictionary
+                let k = rest.key
+                let category = v?["category"] as! String
+                let image = v?["image"] as! String
+                let active = v?["isActive"] as! String
+                let timestamp = v?["timestamp"] as! NSNumber
+                let isActive = active == "Y" ? true : false
+                let t = Date(timeIntervalSince1970: Double(truncating: timestamp))
+                notifications.append(NotificationItem(uid: k, category: category, image: image, isActive: isActive, date: t))
+            }
+            let user = User(uid: snapshot.key, username: username, notifications: notifications)
+            self.delegate?.dataChangedFor(user)
         })
     }
     

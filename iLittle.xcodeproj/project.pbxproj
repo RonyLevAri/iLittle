@@ -29,6 +29,7 @@
 		51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */; };
 		519A730E1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */; };
 		519A730F1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519A730D1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib */; };
+		519A73131FAFB21A007879FD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A73121FAFB21A007879FD /* Config.swift */; };
 		79AC724C2799CF0AF83F2CD4 /* Pods_iLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */; };
 		9960213033ED4A75B12C6634 /* Pods_iLittleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92D8B68DDB1840DA82A80A0 /* Pods_iLittleUITests.framework */; };
 		BB40EF2AD959D2EA7A205419 /* Pods_iLittleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */; };
@@ -83,6 +84,7 @@
 		51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationCollectionViewCell.xib; sourceTree = "<group>"; };
 		519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNotificationCollectionViewCell.swift; sourceTree = "<group>"; };
 		519A730D1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNotificationCollectionViewCell.xib; sourceTree = "<group>"; };
+		519A73121FAFB21A007879FD /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		5A6297D159C159936A3DC384 /* Pods-iLittleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleUITests/Pods-iLittleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E2332B8BAF1E88D41825D9 /* Pods-iLittleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				5150263E1FA8F7530056FEB7 /* AppDelegate.swift */,
+				519A73121FAFB21A007879FD /* Config.swift */,
 				5100656A1FADCF2B00D2FCAF /* customviews */,
 				510065671FADCC9F00D2FCAF /* viewcontrollers */,
 				510065661FADCC8300D2FCAF /* model */,
@@ -548,6 +551,7 @@
 				515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */,
 				510065641FADCC0600D2FCAF /* MainAppViewController.swift in Sources */,
 				5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */,
+				519A73131FAFB21A007879FD /* Config.swift in Sources */,
 				51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */,
 				510065701FAE272200D2FCAF /* NotificationItem.swift in Sources */,
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,

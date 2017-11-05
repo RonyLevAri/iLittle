@@ -28,9 +28,6 @@ class InitialLoginViewController: UIViewController {
     @IBAction func setInitialConfiguration(_ sender: UIButton) {
         usernameTextField.resignFirstResponder()
         username = usernameTextField.text == "" ? "Jhon Doe" : usernameTextField.text
-        // AppFileDataAccessObject.sharedInstance.saveUserNameToFile(username!)
-        // FirebaseAccessObject.sharedInstance.saveUser(username: username!)
-        // UserDefaults.standard.set(username, forKey: "username")
         performSegue(withIdentifier: "configurationSegue", sender: self)
     }
     

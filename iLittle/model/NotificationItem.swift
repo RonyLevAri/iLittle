@@ -9,22 +9,26 @@
 import Foundation
 import FirebaseDatabase
 
-class NotificationItem {
+struct NotificationItem {
     
+    var uid: String?
     let category: String
     let image: String
-    let user: String
     var isActive = false
     var date: Date?
-    
-    var key: String? {
-        set {  }
-        get { return self.key }
-    }
 
-    init(category: String, image: String, user: String) {
+    init(category: String, image: String) {
         self.category = category
         self.image = image
-        self.user = user
     }
+    
+    init(uid: String, category: String, image: String, isActive: Bool, date: Date) {
+        self.uid = uid
+        self.category = category
+        self.image = image
+        self.isActive = isActive
+        self.date = date
+    }
+    
+    public var description: String { return "NotificationItem: \(String(describing: uid)), \(category), \(image), \(isActive), \(String(describing: date))" }
 }

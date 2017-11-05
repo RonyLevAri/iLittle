@@ -12,20 +12,16 @@ import FirebaseAuth
 struct User {
     
     var uid: String
-    var email: String
+    var email: String = "notrelevantnow@gmail.com"
     var username: String
     var notifications = [NotificationItem]()
     
-    init(uid: String, email: String, username: String) {
+    init(uid: String, username: String, notifications: [NotificationItem]) {
+         //todo: take care firebase user logic via authentication
         self.uid = uid
-        self.email = email
         self.username = username
+        self.notifications = notifications
     }
     
-    init(user: User) {
-         //todo: take care firebase user logic via authentication
-        self.uid = user.uid
-        self.email = user.email
-        self.username = AppFileDataAccessObject.sharedInstance.readNameFromFile() ?? "Jon Doe"
-    }
+    public var description: String { return "NotificationItem: \(uid), \(email), \(username), \(notifications)" }
 }

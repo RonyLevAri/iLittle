@@ -24,6 +24,7 @@ class ConfigurationViewController: UIViewController {
     @IBOutlet weak var notificationCollectionView: UICollectionView!
     @IBOutlet weak var welcomLabel: UILabel!
     private var notificationsAuthorizedByUser = false
+    let config = Config()
     
     // todo: extract to external configuration file
     var data = [NotificationItem]()
@@ -51,21 +52,14 @@ class ConfigurationViewController: UIViewController {
         notificationCollectionView.delegate = self
         notificationCollectionView.dataSource = self
         notificationCollectionView.register(UINib(nibName: "ConfigurationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "selectionCell")
-        data.append(NotificationItem(category: "drinking", image: "lemonade_glass256", user: username!))
-        data.append(NotificationItem(category: "moving", image: "step256", user: username!))
-        data.append(NotificationItem(category: "nositting", image: "heartbeat256", user: username!))
+        data = config.initialNotifications
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC = segue.destination as? UINavigationController
         let mainViewController = navVC?.viewControllers.first as! MainAppViewController
         mainViewController.username = username
-        mainViewController.data = data
-//        if let mainViewController = segue.destination as? MainAppViewController {
-//            mainViewController.username = username
-//            mainViewController.data = data
-//            // mainViewController.onBoardFlowNavigationController = self.view.window!.rootViewController as? UINavigationController
-//        }
+        // mainViewController.data = data
     }
     
     //MARK: custom methods
