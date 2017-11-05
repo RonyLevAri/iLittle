@@ -59,7 +59,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-7d-vvV">
                                 <rect key="frame" x="45" y="414.5" width="285" height="53"/>
-                                <color key="backgroundColor" red="0.70370156897438896" green="0.84027777777777779" blue="0.60069444444444442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.83921568627450982" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="30"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.46274509803921571" green="0.46666666666666667" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,22 +103,13 @@
             </objects>
             <point key="canvasLocation" x="2014" y="-45"/>
         </scene>
-        <!--View Controller-->
+        <!--Main App View Controller-->
         <scene sceneID="C7i-5O-DWf">
             <objects>
-                <viewController id="k2Q-gu-bwf" sceneMemberID="viewController">
+                <viewController id="k2Q-gu-bwf" customClass="MainAppViewController" customModule="iLittle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lm8-5H-i2s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4L-BR-4HT">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="2OK-xI-e1c"/>
                     </view>
@@ -126,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEV-Wb-q1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="731"/>
+            <point key="canvasLocation" x="2186" y="731"/>
         </scene>
         <!--Configuration View Controller-->
         <scene sceneID="PYR-PK-A3o">
@@ -207,27 +198,12 @@
                     <connections>
                         <outlet property="notificationCollectionView" destination="W2R-Dx-AmJ" id="wIe-hQ-9KX"/>
                         <outlet property="welcomLabel" destination="RMs-dm-2Gj" id="shU-RD-ceU"/>
-                        <segue destination="eh8-J1-vsX" kind="show" identifier="mainScreensegue" id="QAc-kw-ipV"/>
+                        <segue destination="dk8-kc-kos" kind="showDetail" identifier="mainScreensegue" id="4UH-Hz-cob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXP-NT-JBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2981.5999999999999" y="-45.42728635682159"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="9sB-VC-b29">
-            <objects>
-                <viewController id="eh8-J1-vsX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gtm-T4-qxU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="BqN-te-v5n"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0U-D4-3No" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3858" y="-45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZPj-B3-BFf">

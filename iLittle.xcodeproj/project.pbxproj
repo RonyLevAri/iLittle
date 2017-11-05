@@ -27,6 +27,8 @@
 		515026721FA913AA0056FEB7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 515026711FA913A90056FEB7 /* .gitignore */; };
 		51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */; };
 		51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */; };
+		519A730E1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */; };
+		519A730F1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 519A730D1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib */; };
 		79AC724C2799CF0AF83F2CD4 /* Pods_iLittle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */; };
 		9960213033ED4A75B12C6634 /* Pods_iLittleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92D8B68DDB1840DA82A80A0 /* Pods_iLittleUITests.framework */; };
 		BB40EF2AD959D2EA7A205419 /* Pods_iLittleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */; };
@@ -79,6 +81,8 @@
 		515026711FA913A90056FEB7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCollectionViewCell.swift; sourceTree = "<group>"; };
 		51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationCollectionViewCell.xib; sourceTree = "<group>"; };
+		519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNotificationCollectionViewCell.swift; sourceTree = "<group>"; };
+		519A730D1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNotificationCollectionViewCell.xib; sourceTree = "<group>"; };
 		5A6297D159C159936A3DC384 /* Pods-iLittleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleUITests/Pods-iLittleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLittleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E2332B8BAF1E88D41825D9 /* Pods-iLittleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */,
+				519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */,
 			);
 			path = customviews;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				510065661FADCC8300D2FCAF /* model */,
 				510065651FADCC4800D2FCAF /* bl */,
 				515026421FA8F7530056FEB7 /* Main.storyboard */,
+				519A730D1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib */,
 				51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */,
 				515026481FA8F7530056FEB7 /* Assets.xcassets */,
 				5150264A1FA8F7530056FEB7 /* LaunchScreen.storyboard */,
@@ -355,6 +361,7 @@
 				515026721FA913AA0056FEB7 /* .gitignore in Resources */,
 				5150264C1FA8F7530056FEB7 /* LaunchScreen.storyboard in Resources */,
 				51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */,
+				519A730F1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib in Resources */,
 				515026701FA8F8100056FEB7 /* GoogleService-Info.plist in Resources */,
 				515026491FA8F7530056FEB7 /* Assets.xcassets in Resources */,
 				515026441FA8F7530056FEB7 /* Main.storyboard in Resources */,
@@ -549,6 +556,7 @@
 				51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */,
 				510065691FADCE7300D2FCAF /* FirebaseAccessObject.swift in Sources */,
 				5100656E1FAE189800D2FCAF /* NotificationType.swift in Sources */,
+				519A730E1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift in Sources */,
 				5100656C1FADE86A00D2FCAF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
