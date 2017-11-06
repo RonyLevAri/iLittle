@@ -18,9 +18,11 @@ class MainAppViewController: UIViewController {
     fileprivate let columns = CGFloat(1)
     fileprivate let inset = CGFloat(8)
     fileprivate let columnSpacing = CGFloat(0)
-    fileprivate let rowSpacing = CGFloat(20)
+    fileprivate let rowSpacing = CGFloat(8)
     @IBOutlet weak var viewCollection: UICollectionView!
+    @IBOutlet weak var alabel: UILabel!
     var dataAccessObject: FirebaseAccessObject?
+   
     var user: User?
     
     override func viewDidLoad() {
@@ -40,7 +42,9 @@ extension MainAppViewController: FirebasedataAccessDelgate {
     
     func dataChangedFor(_ user: User) {
         data = user.notifications
-        self.viewCollection.reloadData()
+        viewCollection.reloadData()
+        alabel.text = user.username
+        
     }
 }
 
@@ -58,6 +62,7 @@ extension MainAppViewController: MainNotificationCellDelegate {
     }
     func cont(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
+            data[indexPath.item].isActive = !data[indexPath.item].isActive
             viewCollection.reloadItems(at: [indexPath,])
         }
     }
@@ -84,7 +89,8 @@ extension MainAppViewController: UICollectionViewDelegate {
         let cell = cell as! MainNotificationCollectionViewCell
         cell.notificationCellDelegate = self
         let item = data[indexPath.item]
-        cell.label.text = String(item.isActive)
+        cell.mainImage.image = UIImage(named: item.image)
+        cell.setToolBar(play: item.isActive)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

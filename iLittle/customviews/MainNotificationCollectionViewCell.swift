@@ -21,7 +21,7 @@ class MainNotificationCollectionViewCell: UICollectionViewCell {
     
     //MARK: properties
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var mainImage: UIImageView!
     weak var notificationCellDelegate: MainNotificationCellDelegate?
     
     //MARK: actions
@@ -42,6 +42,26 @@ class MainNotificationCollectionViewCell: UICollectionViewCell {
     }
     @IBAction func trash(_ sender: UIBarButtonItem) {
         notificationCellDelegate?.trash(deledatedFrom: self)
+    }
+    
+    func setToolBar(play: Bool) {
+        if(play) {
+            setPlay()
+        } else {
+            setPause()
+        }
+    }
+    
+    private func setPlay() {
+        var items = toolbar.items
+        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.play, target: self, action: #selector(cont))
+        toolbar.setItems(items, animated: true)
+    }
+    
+    private func setPause() {
+        var items = toolbar.items
+        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.pause, target: self, action: #selector(cont))
+        toolbar.setItems(items, animated: true)
     }
     
     override func awakeFromNib() {

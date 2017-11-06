@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // onboarding flow from https://www.youtube.com/watch?v=MQuzfjsQcHI
         //todo: delete following row when done developing
-        AppFileDataAccessObject.sharedInstance.deleteFile()
+        // AppFileDataAccessObject.sharedInstance.deleteFile()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
