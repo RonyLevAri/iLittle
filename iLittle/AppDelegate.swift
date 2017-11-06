@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 import Firebase
+import UserNotifications
+
+let userNotificationReceivedNotificationName = Notification.Name("com.ronylevari.iLittle.userNotificationReceived")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // create and assign a notification center object delegate
+        let center = UNUserNotificationCenter.current()
+        let notificationCenterAccessObject = NotificatoinsController.sharedInstance
+        notificationCenterAccessObject.registerCustomNotification()
+        center.delegate = notificationCenterAccessObject
+        
+        // Configure firebase
+        FirebaseApp.configure()
+        
         // onboarding flow from https://www.youtube.com/watch?v=MQuzfjsQcHI
-        //todo: delete following row when done developing
-        // AppFileDataAccessObject.sharedInstance.deleteFile()
+        AppFileDataAccessObject.sharedInstance.deleteFile()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
@@ -29,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-        FirebaseApp.configure()
+        
         return true
     }
 
@@ -101,6 +112,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

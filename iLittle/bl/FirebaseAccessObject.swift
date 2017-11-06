@@ -59,7 +59,6 @@ class FirebaseAccessObject {
         return key
     }
     
-    // todo: chane notification structure (username is redundant)
     func saveNotifications(forUserAt key: String, _ notifications: [NotificationItem]) {
         notifications.forEach { (notification) in
             let notificationKey = dataRef.child(key).childByAutoId().key
@@ -72,6 +71,11 @@ class FirebaseAccessObject {
             dataRef.child(key).child("notifications")
                 .child(notificationKey).child("timestamp").setValue(ServerValue.timestamp())
         }
+    }
+    
+    func startTimerFor(uid: String, nid: String, interval: Int) {
+        let params = ["starttime": Int(Date().timeIntervalSince1970), "interval": interval, "hits": 0]
+        dataRef.child(uid).child(nid).setValue(params)
     }
     
     func listenToDataChanges(forUser uid: String) {
@@ -93,6 +97,7 @@ class FirebaseAccessObject {
                 notifications.append(NotificationItem(uid: k, category: category, image: image, isActive: isActive, date: t))
             }
             let user = User(uid: snapshot.key, username: username, notifications: notifications)
+            print("executing listening")
             self.delegate?.dataChangedFor(user)
         })
     }

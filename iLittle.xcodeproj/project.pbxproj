@@ -13,6 +13,7 @@
 		5100656C1FADE86A00D2FCAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656B1FADE86A00D2FCAF /* User.swift */; };
 		5100656E1FAE189800D2FCAF /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656D1FAE189800D2FCAF /* NotificationType.swift */; };
 		510065701FAE272200D2FCAF /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100656F1FAE272200D2FCAF /* NotificationItem.swift */; };
+		51364F7B1FB0AC9400EA76B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156F5051FAFF3570093FFD3 /* NotificationViewController.swift */; };
 		51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B591FABF3320088BC55 /* AppFileDataAccessObject.swift */; };
 		51474B5C1FAC9F740088BC55 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51474B5B1FAC9F740088BC55 /* ConfigurationViewController.swift */; };
 		5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5150263E1FA8F7530056FEB7 /* AppDelegate.swift */; };
@@ -25,6 +26,16 @@
 		515026621FA8F7530056FEB7 /* iLittleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515026611FA8F7530056FEB7 /* iLittleUITests.swift */; };
 		515026701FA8F8100056FEB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5150266F1FA8F80F0056FEB7 /* GoogleService-Info.plist */; };
 		515026721FA913AA0056FEB7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 515026711FA913A90056FEB7 /* .gitignore */; };
+		5156F5011FAFF3570093FFD3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5156F5001FAFF3570093FFD3 /* UserNotifications.framework */; };
+		5156F5031FAFF3570093FFD3 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5156F5021FAFF3570093FFD3 /* UserNotificationsUI.framework */; };
+		5156F5061FAFF3570093FFD3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156F5051FAFF3570093FFD3 /* NotificationViewController.swift */; };
+		5156F5091FAFF3570093FFD3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5156F5071FAFF3570093FFD3 /* MainInterface.storyboard */; };
+		5156F50D1FAFF3580093FFD3 /* ContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5156F4FF1FAFF3570093FFD3 /* ContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5156F5131FB0612B0093FFD3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156F5121FB0612B0093FFD3 /* Utils.swift */; };
+		5156F5181FB085A70093FFD3 /* lemonade_glass256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5156F5141FB085A60093FFD3 /* lemonade_glass256.png */; };
+		5156F5191FB085A70093FFD3 /* heartbeat256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5156F5151FB085A60093FFD3 /* heartbeat256.png */; };
+		5156F51A1FB085A70093FFD3 /* pill256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5156F5161FB085A70093FFD3 /* pill256.png */; };
+		5156F51B1FB085A70093FFD3 /* step256.png in Resources */ = {isa = PBXBuildFile; fileRef = 5156F5171FB085A70093FFD3 /* step256.png */; };
 		51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */; };
 		51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */; };
 		519A730E1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */; };
@@ -50,7 +61,28 @@
 			remoteGlobalIDString = 5150263A1FA8F7530056FEB7;
 			remoteInfo = iLittle;
 		};
+		5156F50B1FAFF3580093FFD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 515026331FA8F7530056FEB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5156F4FE1FAFF3570093FFD3;
+			remoteInfo = ContentExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5156F5111FAFF3580093FFD3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5156F50D1FAFF3580093FFD3 /* ContentExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21B9B533F1D0A9091EA186F0 /* Pods-iLittleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLittleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLittleTests/Pods-iLittleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +112,17 @@
 		515026631FA8F7530056FEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5150266F1FA8F80F0056FEB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		515026711FA913A90056FEB7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5156F4FF1FAFF3570093FFD3 /* ContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5156F5001FAFF3570093FFD3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		5156F5021FAFF3570093FFD3 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		5156F5051FAFF3570093FFD3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		5156F5081FAFF3570093FFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5156F50A1FAFF3580093FFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5156F5121FB0612B0093FFD3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5156F5141FB085A60093FFD3 /* lemonade_glass256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lemonade_glass256.png; sourceTree = "<group>"; };
+		5156F5151FB085A60093FFD3 /* heartbeat256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartbeat256.png; sourceTree = "<group>"; };
+		5156F5161FB085A70093FFD3 /* pill256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pill256.png; sourceTree = "<group>"; };
+		5156F5171FB085A70093FFD3 /* step256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step256.png; sourceTree = "<group>"; };
 		51990DD01FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCollectionViewCell.swift; sourceTree = "<group>"; };
 		51990DD11FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationCollectionViewCell.xib; sourceTree = "<group>"; };
 		519A730C1FAE6B6E007879FD /* MainNotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNotificationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +161,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5156F4FC1FAFF3570093FFD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5156F5031FAFF3570093FFD3 /* UserNotificationsUI.framework in Frameworks */,
+				5156F5011FAFF3570093FFD3 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +179,8 @@
 				2DC7C424DC9AC52FE8C73A76 /* Pods_iLittle.framework */,
 				5BA2E2AC2A76B09073B92AED /* Pods_iLittleTests.framework */,
 				E92D8B68DDB1840DA82A80A0 /* Pods_iLittleUITests.framework */,
+				5156F5001FAFF3570093FFD3 /* UserNotifications.framework */,
+				5156F5021FAFF3570093FFD3 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +231,7 @@
 				5150263D1FA8F7530056FEB7 /* iLittle */,
 				515026551FA8F7530056FEB7 /* iLittleTests */,
 				515026601FA8F7530056FEB7 /* iLittleUITests */,
+				5156F5041FAFF3570093FFD3 /* ContentExtension */,
 				5150263C1FA8F7530056FEB7 /* Products */,
 				8234CE7E3BD527869AAEF55C /* Pods */,
 				4B493CF9A44798E17C3E0712 /* Frameworks */,
@@ -189,6 +244,7 @@
 				5150263B1FA8F7530056FEB7 /* iLittle.app */,
 				515026521FA8F7530056FEB7 /* iLittleTests.xctest */,
 				5150265D1FA8F7530056FEB7 /* iLittleUITests.xctest */,
+				5156F4FF1FAFF3570093FFD3 /* ContentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,8 +252,13 @@
 		5150263D1FA8F7530056FEB7 /* iLittle */ = {
 			isa = PBXGroup;
 			children = (
+				5156F5151FB085A60093FFD3 /* heartbeat256.png */,
+				5156F5141FB085A60093FFD3 /* lemonade_glass256.png */,
+				5156F5161FB085A70093FFD3 /* pill256.png */,
+				5156F5171FB085A70093FFD3 /* step256.png */,
 				5150263E1FA8F7530056FEB7 /* AppDelegate.swift */,
 				519A73121FAFB21A007879FD /* Config.swift */,
+				5156F5121FB0612B0093FFD3 /* Utils.swift */,
 				5100656A1FADCF2B00D2FCAF /* customviews */,
 				510065671FADCC9F00D2FCAF /* viewcontrollers */,
 				510065661FADCC8300D2FCAF /* model */,
@@ -232,6 +293,16 @@
 			path = iLittleUITests;
 			sourceTree = "<group>";
 		};
+		5156F5041FAFF3570093FFD3 /* ContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5156F5051FAFF3570093FFD3 /* NotificationViewController.swift */,
+				5156F5071FAFF3570093FFD3 /* MainInterface.storyboard */,
+				5156F50A1FAFF3580093FFD3 /* Info.plist */,
+			);
+			path = ContentExtension;
+			sourceTree = "<group>";
+		};
 		8234CE7E3BD527869AAEF55C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,10 +329,12 @@
 				515026391FA8F7530056FEB7 /* Resources */,
 				CF6AF7E2B39DC73204D2EFF6 /* [CP] Embed Pods Frameworks */,
 				042F9EB8914725201F6B3824 /* [CP] Copy Pods Resources */,
+				5156F5111FAFF3580093FFD3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5156F50C1FAFF3580093FFD3 /* PBXTargetDependency */,
 			);
 			name = iLittle;
 			productName = iLittle;
@@ -310,6 +383,23 @@
 			productReference = 5150265D1FA8F7530056FEB7 /* iLittleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5156F4FE1FAFF3570093FFD3 /* ContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5156F5101FAFF3580093FFD3 /* Build configuration list for PBXNativeTarget "ContentExtension" */;
+			buildPhases = (
+				5156F4FB1FAFF3570093FFD3 /* Sources */,
+				5156F4FC1FAFF3570093FFD3 /* Frameworks */,
+				5156F4FD1FAFF3570093FFD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentExtension;
+			productName = ContentExtension;
+			productReference = 5156F4FF1FAFF3570093FFD3 /* ContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -334,6 +424,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5150263A1FA8F7530056FEB7;
 					};
+					5156F4FE1FAFF3570093FFD3 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 515026361FA8F7530056FEB7 /* Build configuration list for PBXProject "iLittle" */;
@@ -352,6 +446,7 @@
 				5150263A1FA8F7530056FEB7 /* iLittle */,
 				515026511FA8F7530056FEB7 /* iLittleTests */,
 				5150265C1FA8F7530056FEB7 /* iLittleUITests */,
+				5156F4FE1FAFF3570093FFD3 /* ContentExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -362,8 +457,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				515026721FA913AA0056FEB7 /* .gitignore in Resources */,
+				5156F51B1FB085A70093FFD3 /* step256.png in Resources */,
 				5150264C1FA8F7530056FEB7 /* LaunchScreen.storyboard in Resources */,
+				5156F51A1FB085A70093FFD3 /* pill256.png in Resources */,
 				51990DD31FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.xib in Resources */,
+				5156F5191FB085A70093FFD3 /* heartbeat256.png in Resources */,
+				5156F5181FB085A70093FFD3 /* lemonade_glass256.png in Resources */,
 				519A730F1FAE6B6E007879FD /* MainNotificationCollectionViewCell.xib in Resources */,
 				515026701FA8F8100056FEB7 /* GoogleService-Info.plist in Resources */,
 				515026491FA8F7530056FEB7 /* Assets.xcassets in Resources */,
@@ -382,6 +481,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5156F4FD1FAFF3570093FFD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5156F5091FAFF3570093FFD3 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,9 +657,11 @@
 			files = (
 				515026411FA8F7530056FEB7 /* InitialLoginViewController.swift in Sources */,
 				510065641FADCC0600D2FCAF /* MainAppViewController.swift in Sources */,
+				51364F7B1FB0AC9400EA76B6 /* NotificationViewController.swift in Sources */,
 				5150263F1FA8F7530056FEB7 /* AppDelegate.swift in Sources */,
 				519A73131FAFB21A007879FD /* Config.swift in Sources */,
 				51990DD21FACF1FF00DE7A79 /* ConfigurationCollectionViewCell.swift in Sources */,
+				5156F5131FB0612B0093FFD3 /* Utils.swift in Sources */,
 				510065701FAE272200D2FCAF /* NotificationItem.swift in Sources */,
 				515026471FA8F7530056FEB7 /* iLittle.xcdatamodeld in Sources */,
 				51474B5A1FABF3320088BC55 /* AppFileDataAccessObject.swift in Sources */,
@@ -581,6 +690,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5156F4FB1FAFF3570093FFD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5156F5061FAFF3570093FFD3 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -593,6 +710,11 @@
 			isa = PBXTargetDependency;
 			target = 5150263A1FA8F7530056FEB7 /* iLittle */;
 			targetProxy = 5150265E1FA8F7530056FEB7 /* PBXContainerItemProxy */;
+		};
+		5156F50C1FAFF3580093FFD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5156F4FE1FAFF3570093FFD3 /* ContentExtension */;
+			targetProxy = 5156F50B1FAFF3580093FFD3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -611,6 +733,14 @@
 				5150264B1FA8F7530056FEB7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5156F5071FAFF3570093FFD3 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5156F5081FAFF3570093FFD3 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -727,6 +857,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C34F1803190D6849337FF116 /* Pods-iLittle.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iLittle/Info.plist;
@@ -742,6 +873,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B6A531D7FEF5725F3377C35 /* Pods-iLittle.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iLittle/Info.plist;
@@ -819,6 +951,34 @@
 			};
 			name = Release;
 		};
+		5156F50E1FAFF3580093FFD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronylevari.iLittle.ContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5156F50F1FAFF3580093FFD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ContentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ronylevari.iLittle.ContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -854,6 +1014,15 @@
 			buildConfigurations = (
 				5150266D1FA8F7530056FEB7 /* Debug */,
 				5150266E1FA8F7530056FEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5156F5101FAFF3580093FFD3 /* Build configuration list for PBXNativeTarget "ContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5156F50E1FAFF3580093FFD3 /* Debug */,
+				5156F50F1FAFF3580093FFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

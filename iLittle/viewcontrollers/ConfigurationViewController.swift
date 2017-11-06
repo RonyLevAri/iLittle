@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 class ConfigurationViewController: UIViewController {
     
@@ -23,7 +22,7 @@ class ConfigurationViewController: UIViewController {
     fileprivate let rowSpacing = CGFloat(8)
     @IBOutlet weak var notificationCollectionView: UICollectionView!
     @IBOutlet weak var welcomLabel: UILabel!
-    private var notificationsAuthorizedByUser = false
+    //private var notificationsAuthorizedByUser = false
     let config = Config()
     
     // todo: extract to external configuration file
@@ -31,19 +30,24 @@ class ConfigurationViewController: UIViewController {
     
     //MARK: actions
     @IBAction func gotoMainAppScreen(_ sender: UIButton) {
-        doInitialAuthorizationFlow()
-        if(notificationsAuthorizedByUser) {
-            //todo: why isn't call on second time??
-        } else {
-            //todo: complete non happy path
-        }
+//        //doInitialAuthorizationFlow()
+//        if(notificationsAuthorizedByUser) {
+//            //todo: why isn't call on second time??
+//        } else {
+//            //todo: complete non happy path
+//        }
         saveUserConfiguration()
         performSegue(withIdentifier: "mainScreenSegue", sender: self)
     }
     
     func saveUserConfiguration() {
+         // todo: add logic to handle different configuration seletions
+        data = config.initialNotifications
         let userKey = FirebaseAccessObject.sharedInstance.saveUserConfiguration(username: username!, notifications: data)
-        AppFileDataAccessObject.sharedInstance.saveUserNameToFile(userKey)
+        //Utils.delay(1.0, closure: {
+            AppFileDataAccessObject.sharedInstance.saveUserNameToFile(userKey)
+        //})
+        
     }
     
     //MARK view controller setup
@@ -63,25 +67,25 @@ class ConfigurationViewController: UIViewController {
     }
     
     //MARK: custom methods
-    func doInitialAuthorizationFlow() {
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings(completionHandler: { [unowned self] (settings) in
-            if(settings.authorizationStatus == .authorized) {
-                self.notificationsAuthorizedByUser = true
-            } else {
-                // User has not given permissions
-                center.requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {(granted, error) in
-                    if let error = error {
-                        print(error)
-                    } else {
-                        if(granted) {
-                            self.notificationsAuthorizedByUser = true
-                        }
-                    }
-                })
-            }
-        })
-    }
+//    func doInitialAuthorizationFlow() {
+//        let center = UNUserNotificationCenter.current()
+//        center.getNotificationSettings(completionHandler: { [unowned self] (settings) in
+//            if(settings.authorizationStatus == .authorized) {
+//                self.notificationsAuthorizedByUser = true
+//            } else {
+//                // User has not given permissions
+//                center.requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {(granted, error) in
+//                    if let error = error {
+//                        print(error)
+//                    } else {
+//                        if(granted) {
+//                            self.notificationsAuthorizedByUser = true
+//                        }
+//                    }
+//                })
+//            }
+//        })
+//    }
 }
 
 //MARK: flow collectionview delegate

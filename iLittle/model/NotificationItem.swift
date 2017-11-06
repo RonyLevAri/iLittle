@@ -16,6 +16,9 @@ struct NotificationItem {
     let image: String
     var isActive = false
     var date: Date?
+    var intervalInMinutes = 1
+    var alertText = "Time for...bla bla"
+    var hits = 0
 
     init(category: String, image: String) {
         self.category = category

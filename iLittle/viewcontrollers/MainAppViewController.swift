@@ -8,9 +8,14 @@
 
 import UIKit
 import Firebase
+//import UserNotifications
 
 class MainAppViewController: UIViewController {
 
+    deinit {
+        print("initial login dismissed")
+    }
+    
     //MARK: propertires
     var username: String?
     var data = [NotificationItem]()
@@ -21,30 +26,53 @@ class MainAppViewController: UIViewController {
     fileprivate let rowSpacing = CGFloat(8)
     @IBOutlet weak var viewCollection: UICollectionView!
     @IBOutlet weak var alabel: UILabel!
-    var dataAccessObject: FirebaseAccessObject?
+    lazy var dataAccessObject: FirebaseAccessObject = FirebaseAccessObject.sharedInstance
+    private var isAuthorized = false
+    var notificationCenterAccessObject: NotificatoinsController?
    
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uid = AppFileDataAccessObject.sharedInstance.readNameFromFile()!
-        dataAccessObject = FirebaseAccessObject.sharedInstance
-        dataAccessObject!.delegate = self
+        // call notification center to request authorization
+        notificationCenterAccessObject = NotificatoinsController.sharedInstance
+        notificationCenterAccessObject!.delegate = self
+        isAuthorized = notificationCenterAccessObject!.notificationAuthorization()
+        if(!isAuthorized) {
+            // implement non happy path
+        }
+        // hook with database
+        if let uid = AppFileDataAccessObject.sharedInstance.readNameFromFile() {
+            dataAccessObject.delegate = self
+            dataAccessObject.listenToDataChanges(forUser: uid)
+        }
+        
+        // configure collection view
         viewCollection.delegate = self
         viewCollection.dataSource = self
         viewCollection.register(UINib(nibName: "MainNotificationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "notificationCell")
-        dataAccessObject!.listenToDataChanges(forUser: uid)
     }
-
+    
+    func scheduleNotificationFor(_ notification: NotificationItem) {
+        
+    }
+    
+    func pauseNotificationFor(_ notification: NotificationItem) {
+        
+    }
+    
+    func deleteNotification(_ notification: NotificationItem) {
+    
+    }
 }
 
 extension MainAppViewController: FirebasedataAccessDelgate {
     
     func dataChangedFor(_ user: User) {
+        self.user = user
         data = user.notifications
         viewCollection.reloadData()
         alabel.text = user.username
-        
     }
 }
 
@@ -58,12 +86,16 @@ extension MainAppViewController: MainNotificationCellDelegate {
     func refresh(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
             viewCollection.reloadItems(at: [indexPath,])
+            // resert notification
+            dataAccessObject.startTimerFor(uid: (user?.uid)!, nid: (data[indexPath.item].uid)!, interval: data[indexPath.item].intervalInMinutes)
         }
     }
     func cont(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
             data[indexPath.item].isActive = !data[indexPath.item].isActive
-            viewCollection.reloadItems(at: [indexPath,])
+            notificationCenterAccessObject?.schedule(data[indexPath.item])
+            dataAccessObject.startTimerFor(uid: (user?.uid)!, nid: (data[indexPath.item].uid)!, interval: data[indexPath.item].intervalInMinutes)
+            // viewCollection.reloadItems(at: [indexPath,])
         }
     }
     func showStatistics(deledatedFrom cell: MainNotificationCollectionViewCell) {
@@ -142,4 +174,8 @@ extension MainAppViewController: UICollectionViewDelegateFlowLayout {
         let width = Int((collectionView.frame.width / columns) - (inset * 2))
         return CGSize(width: width, height: (width / 2))
     }
+}
+
+extension MainAppViewController: NotificationControllerDelegate {
+    
 }

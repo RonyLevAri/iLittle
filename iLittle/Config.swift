@@ -20,6 +20,6 @@ struct Config {
         initialNotifications.append(NotificationItem(category: "drinking", image: "lemonade_glass256"))
         initialNotifications.append(NotificationItem(category: "moving", image: "step256"))
         initialNotifications.append(NotificationItem(category: "nositting", image: "heartbeat256"))
-        initialNotifications.append(NotificationItem(category: "farting", image: "heartbeat256"))
+        initialNotifications.append(NotificationItem(category: "drugs", image: "pill256"))
     }
 }

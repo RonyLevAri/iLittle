@@ -54,13 +54,13 @@ class MainNotificationCollectionViewCell: UICollectionViewCell {
     
     private func setPlay() {
         var items = toolbar.items
-        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.play, target: self, action: #selector(cont))
+        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.pause, target: self, action: #selector(cont))
         toolbar.setItems(items, animated: true)
     }
     
     private func setPause() {
         var items = toolbar.items
-        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.pause, target: self, action: #selector(cont))
+        items![4] = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.play, target: self, action: #selector(cont))
         toolbar.setItems(items, animated: true)
     }
     
