@@ -10,7 +10,7 @@ import Foundation
 import UserNotifications
 
 protocol NotificationControllerDelegate: class {
-    
+    func userCompliedWith(notification: UNNotificationResponse)
 }
 
 class NotificatoinsController: NSObject {
@@ -90,7 +90,6 @@ class NotificatoinsController: NSObject {
         group.enter()
         notificationCenter.getNotificationSettings { (settings) in
             dataSaveQueue.async(execute: {
-                let settingProvider = settings
                 //update something
                 group.leave()
             })
@@ -99,7 +98,6 @@ class NotificatoinsController: NSObject {
         group.enter()
         notificationCenter.getPendingNotificationRequests { (requests) in
             dataSaveQueue.async(execute: {
-                let pendingProvider = requests
                 //update something
                 group.leave()
             })
@@ -109,7 +107,6 @@ class NotificatoinsController: NSObject {
         group.enter()
         notificationCenter.getDeliveredNotifications { (notifications) in
             dataSaveQueue.async(execute: {
-                let deliveredProvider = notifications
                 //update something
                 group.leave()
             })
@@ -174,25 +171,6 @@ class NotificatoinsController: NSObject {
     @objc func handleNotificationReceived() {
         loadNotificationData()
     }
-    
-    //    func scheduleNotification() {
-    //        let content = UNMutableNotificationContent()
-    //        content.title = "kusemek"
-    //        content.subtitle = "ars"
-    //        content.body = "arsabuk"
-    //        content.categoryIdentifier = iLittleCategoryName
-    //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-    //        let notificationRequest = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
-    //
-    //        UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: {(error) in
-    //            if let error = error {
-    //                print(error)
-    //            } else {
-    //                print("notification scheduled")
-    //            }
-    //        })
-    //    }
-
 }
 
 extension NotificatoinsController: UNUserNotificationCenterDelegate {
@@ -211,10 +189,12 @@ extension NotificatoinsController: UNUserNotificationCenterDelegate {
         case UNNotificationDismissActionIdentifier:
             print("Dismiss Action")
         case UNNotificationDefaultActionIdentifier:
+            // do nothing
             print("Default")
         case NotificationIdentifier.actionOneIdentifier.rawValue:
             // update database for a hit
             print("done")
+            delegate?.userCompliedWith(notification: response)
         case NotificationIdentifier.actionTwoIdentifier.rawValue:
             print("undone")
         default:

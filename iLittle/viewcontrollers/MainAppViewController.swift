@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-//import UserNotifications
+import UserNotifications
 
 class MainAppViewController: UIViewController {
 
@@ -52,18 +52,6 @@ class MainAppViewController: UIViewController {
         viewCollection.dataSource = self
         viewCollection.register(UINib(nibName: "MainNotificationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "notificationCell")
     }
-    
-    func scheduleNotificationFor(_ notification: NotificationItem) {
-        
-    }
-    
-    func pauseNotificationFor(_ notification: NotificationItem) {
-        
-    }
-    
-    func deleteNotification(_ notification: NotificationItem) {
-    
-    }
 }
 
 extension MainAppViewController: FirebasedataAccessDelgate {
@@ -80,6 +68,8 @@ extension MainAppViewController: MainNotificationCellDelegate {
     
     func done(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
+            data[indexPath.item].hits += 1
+            dataAccessObject.updateHitFor(uid: (user?.uid)!, nid: (data[indexPath.item].uid)!, hits: data[indexPath.item].hits)
             viewCollection.reloadItems(at: [indexPath,])
         }
     }
@@ -101,16 +91,19 @@ extension MainAppViewController: MainNotificationCellDelegate {
     func showStatistics(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
             viewCollection.reloadItems(at: [indexPath,])
+            // fetch relevant data and suege to stat view
         }
     }
     func edit(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
             viewCollection.reloadItems(at: [indexPath,])
+            // fetch relevant data and segue to edit page
         }
     }
     func trash(deledatedFrom cell: MainNotificationCollectionViewCell) {
         if let indexPath = viewCollection.indexPath(for: cell) {
             viewCollection.reloadItems(at: [indexPath,])
+            // update database and clear from UI 
         }
     }
 }
@@ -177,5 +170,7 @@ extension MainAppViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MainAppViewController: NotificationControllerDelegate {
-    
+    func userCompliedWith(notification: UNNotificationResponse) {
+        // update database
+    }
 }

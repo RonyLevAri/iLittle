@@ -44,7 +44,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
         
         let id = response.actionIdentifier
-        // Determine the user action
+        // Determine the user action and provide visual feedback accordingly
         switch id {
         case UNNotificationDismissActionIdentifier:
             label.text = "Dismiss Action"

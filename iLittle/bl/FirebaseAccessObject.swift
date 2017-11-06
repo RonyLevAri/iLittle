@@ -78,6 +78,10 @@ class FirebaseAccessObject {
         dataRef.child(uid).child(nid).setValue(params)
     }
     
+    func updateHitFor(uid: String, nid: String, hits: Int) {
+        dataRef.child(uid).child(nid).child("hits").setValue(hits)
+    }
+    
     func listenToDataChanges(forUser uid: String) {
         dataRef.child(uid).observe(.value, with: { [unowned self] (snapshot) in
             var notifications = [NotificationItem]()
